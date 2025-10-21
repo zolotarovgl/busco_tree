@@ -9,7 +9,16 @@ Identify single BUSCO orthologs in `species_list` and build a species tree for G
 
 
 Get a tree from NCBI:  
-`species_prefixes.tab` has a form of `[PREFIX,e.g Mmus]\t[NAME,e.g. Mus musculus]' 
+`species_prefixes.tab` has a form: 
+
+```
+[PREFIX,e.g Mmus]\t[NAME,e.g. Mus musculus]
+```  
+
+# NCBI tree   
+
+Fetch the tree for your species using NCBI:  
+
 
 ```bash
 cat species_prefixes.tab | grep -f species_list | cut -f 2 | sort | uniq > ids
@@ -18,13 +27,17 @@ python plot.py test.tree test.pdf
 ```
 
 
+# BUSCO tree   
+
+
+Launch the job:  
 
 ```bash
 mamba activate phylo
 sbatch --mem=10G --time=06:00:00 submit.sh 
 ```
 
-Example
+The job launched:  
 ```bash
 BUSCODIR=/users/asebe/xgraubove/genomes/annotation_busco/ # path to Xavi's busco analysis directory
 IQTREE=/users/xgraubove/Programes/iqtree-2.1.0-Linux/bin/iqtree2
