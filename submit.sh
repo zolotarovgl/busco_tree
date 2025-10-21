@@ -18,4 +18,4 @@ python busco_tree.py \
     --ncpu 16
 
 python plot.py results_busco/supermatrix.treefile output.pdf
-
+echo "done"

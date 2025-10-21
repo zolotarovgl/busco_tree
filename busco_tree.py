@@ -18,6 +18,9 @@ tmp_dir = Path("tmp")
 res_dir = Path("results_busco")
 tmp_dir.mkdir(exist_ok=True)
 res_dir.mkdir(exist_ok=True)
+subprocess.run(["mkdir", "-p", "tmp_parallel"], check=True)
+os.environ["TMPDIR"] = "tmp_parallel"
+
 
 # Prepare species patterns
 species_pats = tmp_dir / "species_pats"
@@ -62,7 +65,7 @@ cmd = f"cat {tmp_dir}/*single_copy | awk -F'/' '{{print $NF}}' | sed 's/.faa//g'
 subprocess.run(["bash","-c",cmd], check=False)
 n = int(subprocess.getoutput(f"wc -l {torun} | cut -f1 -d' '"))
 print(f"{n} single-copy orthologs found in at least {nmin} species.")
-nmax = 10
+nmax = 1000
 args.ncpu = min(int(args.ncpu),nmax)
 if n==0:
     print(f"ERROR: no busco copies present in at least {nmin} / {nf} species!")
@@ -77,15 +80,23 @@ else:
 subprocess.run(cmd)
 # Add missing species sequences
 for f in tmp_dir.glob("aln.*.l.fasta"):
-    cmd = (
-        "awk -v ID=$ID 'FNR==NR { species_list[$1]+=1; next }"
-        "{alnlen = length($2);split($name,a,\"_\");sp_seen[a[1]]+=1;print \">\"$1\"\\t\"$2}"
-        "END{for(sp in species_list){if (sp in sp_seen == 0){emptyseq=gensub(/ /, \"-\", \"g\", sprintf(\"%*s\", alnlen, \"\"));"
-        "print \">\"sp\"_\"ID\"\\t\"emptyseq}}}' "
-        f"{args.species_list} <(bioawk -c fastx '{{print $0}}' {f}) | sort -k 1 | "
-        f"awk '{print $1\"\\n\"$2}' > {f}.tmp; mv {f}.tmp {f}"
-    )
-    subprocess.run(["bash","-c",cmd], check=False)
+    cmd = f"""
+    awk -v ID={os.path.splitext(os.path.basename(f))[0]} 'FNR==NR {{ species_list[$1]+=1; next }}
+    {{ alnlen = length($2); split($1,a,"_"); sp_seen[a[1]]+=1; print ">"$1"\\t"$2 }}
+    END {{
+        for (sp in species_list) {{
+            if (!(sp in sp_seen)) {{
+                emptyseq = gensub(/ /, "-", "g", sprintf("%*s", alnlen, ""));
+                print ">"sp"_"ID"\\t"emptyseq
+            }}
+        }}
+    }}' {args.species_list} <(bioawk -c fastx '{{print $0}}' {f}) | sort -k 1 | \
+    awk '{{print $1"\\n"$2}}' > {f}.tmp && mv {f}.tmp {f}
+    """
+
+    subprocess.run(["bash", "-c", cmd], check=True)
+
+
 
 # Concatenate alignments
 cmd = (

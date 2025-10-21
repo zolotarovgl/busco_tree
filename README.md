@@ -6,7 +6,7 @@
 
 
 ```bash
-bash --time=00:10:00 submit.sh 
+sbatch --time=06:00:00 submit.sh 
 ```
 
 Example
