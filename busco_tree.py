@@ -19,10 +19,17 @@ nmax = 30
 
 
 busco_dir = Path(args.busco_dir)
-tmp_dir = Path("tmp")
+
 res_dir = Path("results_busco")
+tmp_dir = Path("tmp")
+
+if res_dir.exists():
+    print(f"Error: {res_dir} already exists. Remove it or choose another output directory.")
+    sys.exit(1)
+
 tmp_dir.mkdir(exist_ok=True)
-res_dir.mkdir(exist_ok=True)
+res_dir.mkdir()
+
 subprocess.run(["mkdir", "-p", "tmp_parallel"], check=True)
 os.environ["TMPDIR"] = "tmp_parallel"
 

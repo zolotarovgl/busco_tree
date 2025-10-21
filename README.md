@@ -1,6 +1,6 @@
 # BUSCO-based phylogeny   
 
-Identify single BUSCO orthologs in `species_list` and build a species tree for GeneRax
+Identify single BUSCO orthologs in `species_list` and build a species tree for GeneRax.
 
 
 ## TODOs  
@@ -9,6 +9,7 @@ Identify single BUSCO orthologs in `species_list` and build a species tree for G
 
 
 ```bash
+mamba activate phylo
 sbatch --mem=10G --time=06:00:00 submit.sh 
 ```
 
