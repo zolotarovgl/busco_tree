@@ -15,5 +15,6 @@ python busco_tree.py \
     --fmin 0.7 \
     --ncpu 32
 
-python plot.py results_busco/supermatrix.treefile output.pdf
+python reroot.py --input results_busco/supermatrix.treefile --outgroup Cowc > results_busco/supermatrix.roooted.treefile
+python plot.py results_busco/supermatrix.roooted.treefile output.pdf
 echo "done"

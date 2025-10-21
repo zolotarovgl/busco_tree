@@ -46,7 +46,6 @@ Bden	Batrachochytrium dendrobatidis
 Bdis	Brachypodium distachyon
 Beraby	Beroe abyssicola
 Berfor	Beroe forskalii
-Berova	Beroe ovata
 Bflo	Branchiostoma floridae
 Biogla	Biomphalaria glabrata
 Bnat	Bigelowiella natans
@@ -126,7 +125,6 @@ Erygut	Erythranthe guttata
 Esil	Ectocarpus siliculosus
 Euncar	Eunapius carteri
 Eupdun	Euplokamis dunlapae
-Eupsco	Euprymna scolopes
 Exapal	Exaiptasia diaphana
 Fabtro	Fabomonas tropica
 Falb	Fonticula alba
@@ -158,7 +156,6 @@ Hmia	Hofstenia miamia
 HoiH04	Hoilungia sp. H4
 HoiH06	Hoilungia sp. H6
 HoiH11	Hoilungia sp. H11
-HoiH23	Cladtertia collaboinventa
 Honfer	Hondaea fermentalgiana
 Horcal	Hormiphora californensis
 Hsap	Homo sapiens
@@ -179,7 +176,6 @@ Lepsey	Leptomonas seymouri
 Leuniv	Leuconia nivea
 Lgig	Lottia gigantea
 Linana	Lingula anatina
-Linlon	Lineus longissimus
 Litglo	Lithocolla globosa
 Lmaj	Leishmania major
 Lpol	Limulus polyphemus
@@ -253,7 +249,6 @@ Plabra	Plasmodiophora brassicae
 Plafun	Planoprotostelium fungivorum
 Plajan	Plakina jani
 Plamic	Planomonas micra
-Plebac	Pleurobrachia bachei
 Plespi	Pleraplysilla spinifera
 Pocdam	Pocillopora damicornis
 Polpol	Pollicipes pollicipes
@@ -366,3 +361,67 @@ Halcae	Halisarca caerulea
 Dysava	Dysidea avara
 Aphrbe	Aphrocallistes beatrix
 Aphvas	Aphrocallistes vastus
+Acrcer	Acropora cervicornis
+Acrmur	Acropora muricata
+Acrpal	Acropora palmata
+Acticb	Actinostola sp. cb2023
+Actite	Actinia tenebrosa
+Alaala	Alatina alata
+Ampfil	Amphiura filiformis
+Antmed	Antedon mediterranea
+Antxan	Anthopleura xanthogrammica
+Astamu	Asterias amurensis
+Aurdaw	Aurelia sp. 4 Dawson et al 2005
+Bflz	Branchiostoma floridae, bjbf
+Blawel	Blastomussa wellsi
+Calcru	Calvadosia cruxmelitensis
+Calgra	Callogorgia gracilis
+Casssp	Cassiopea sp. PORT0000214
+Catmos	Catostylus mosaicus
+Cavobe	Cavernularia obesa
+Chiyam	Chironex yamaguchii
+Copsiv	Copula sivickisi
+Cracon	Craterolophus convolvulus
+Dialin	Diadumene lineata
+Diaset	Diadema setosum
+Eptbur	Eptatretus burgeri
+Euncav	Eunicella cavolini
+Eunver	Eunicella verrucosa
+Haliau	Haliclystus auricula
+Haloct	Haliclystus octoradiatus 
+Helery	Heliocidaris erythrogramma
+Heltub	Heliocidaris tuberculata
+Hemimp	Hemicorallium imperiale
+Holgla	Holothuria glaberrima
+Holsca	Holothuria scabra
+Hydrsy	Hydractinia symbiolongicarpus 
+Lepsar	Leptogorgia sarmentosa
+Lopper	Lophelia pertusa
+Lucqua	Lucernaria quadricornis
+Lytpic	Lytechinus pictus
+Maspap	Mastigias papua
+Meamea	Meandrina meandrites
+Metsen	Metridium senile
+Miclor	Micromussa lordhowensis
+Moncap	Montipora capitata
+Moncpr	Montipora capricornis
+Monfol	Montipora foliosa
+Murmur	Muricea muricata
+Ocuarb	Oculina arbuscula
+Ophsar	Ophiura sarsii
+Orbfav	Orbicella faveolata
+Patmin	Patiria miniata
+Patpec	Patiria pectinifera
+Pelnoc	Pelagia noctiluca
+Pliv	Paracentrotus lividus
+Pocver	Pocillopora verrucosa
+Porlut	Porites lutea
+Ptegri	Pteroeides griseum
+Ricflo	Ricordea florida
+Scocal	Scolanthus callimorphus
+Sidrad	Siderastrea radians
+Stycla	Styela clava
+Symros	Symsagittifera roscoffensis
+Temree	Temnopleurus reevesii
+Tricys	Tripedalia cystophora
+Turdoh	Turritopsis dohrnii

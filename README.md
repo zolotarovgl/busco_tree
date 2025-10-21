@@ -30,5 +30,6 @@ BUSCODIR=/users/asebe/xgraubove/genomes/annotation_busco/ # path to Xavi's busco
 IQTREE=/users/xgraubove/Programes/iqtree-2.1.0-Linux/bin/iqtree2
 
 python busco_tree.py --busco_dir $BUSCODIR --iqtree $IQTREE --species_list species_list --fmin 1 --ncpu 4
-python plot.py results_busco/supermatrix.treefile
+python reroot.py --input results_busco/supermatrix.treefile --outgroup Cowc > results_busco/supermatrix.roooted.treefile
+python plot.py results_busco/supermatrix.roooted.treefile output.pdf
 ```
