@@ -8,6 +8,17 @@ Identify single BUSCO orthologs in `species_list` and build a species tree for G
 - check the alignments that have failed    
 
 
+Get a tree from NCBI:  
+`species_prefixes.tab` has a form of `[PREFIX,e.g Mmus]\t[NAME,e.g. Mus musculus]' 
+
+```bash
+cat species_prefixes.tab | grep -f species_list | cut -f 2 | sort | uniq > ids
+python ncbi_tree.py --input ids --prefixes species_prefixes.tab > test.tree
+python plot.py test.tree test.pdf
+```
+
+
+
 ```bash
 mamba activate phylo
 sbatch --mem=10G --time=06:00:00 submit.sh 

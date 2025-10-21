@@ -11,11 +11,10 @@ parser.add_argument("--species_list", required=True, help="File with species nam
 parser.add_argument("--iqtree", required=True, help="Path to iqtree2 binary")
 parser.add_argument("--ncpu", type=int, default=1, help="Number of CPUs")
 parser.add_argument("--fmin", type=float, default=float(0.7), help="Minimum fraction of species per BUSCO to include. Default: 0.7")
-parser.add_argument("--nmax", type=int, default=1000, help="Maximum number of orthologs to use. Default: 1000")
+parser.add_argument("--nmax", type=int, default=100, help="Maximum number of orthologs to use. Default: 100")
 args = parser.parse_args()
 
 nmax = int(args.nmax)
-nmax = 30
 
 
 busco_dir = Path(args.busco_dir)

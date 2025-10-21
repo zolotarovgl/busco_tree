@@ -1,4 +1,8 @@
 tmp*
 results_*
-species_*
+species_list*
 log_*
+*.pdf
+*.tree
+*.treefile
+*.newick
