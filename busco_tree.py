@@ -11,7 +11,12 @@ parser.add_argument("--species_list", required=True, help="File with species nam
 parser.add_argument("--iqtree", required=True, help="Path to iqtree2 binary")
 parser.add_argument("--ncpu", type=int, default=1, help="Number of CPUs")
 parser.add_argument("--fmin", type=float, default=float(0.7), help="Minimum fraction of species per BUSCO to include. Default: 0.7")
+parser.add_argument("--nmax", type=int, default=1000, help="Maximum number of orthologs to use. Default: 1000")
 args = parser.parse_args()
+
+nmax = int(args.nmax)
+nmax = 30
+
 
 busco_dir = Path(args.busco_dir)
 tmp_dir = Path("tmp")
@@ -65,7 +70,6 @@ cmd = f"cat {tmp_dir}/*single_copy | awk -F'/' '{{print $NF}}' | sed 's/.faa//g'
 subprocess.run(["bash","-c",cmd], check=False)
 n = int(subprocess.getoutput(f"wc -l {torun} | cut -f1 -d' '"))
 print(f"{n} single-copy orthologs found in at least {nmin} species.")
-nmax = 1000
 args.ncpu = min(int(args.ncpu),nmax)
 if n==0:
     print(f"ERROR: no busco copies present in at least {nmin} / {nf} species!")

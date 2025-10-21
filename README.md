@@ -1,12 +1,15 @@
 # BUSCO-based phylogeny   
 
+Identify single BUSCO orthologs in `species_list` and build a species tree for GeneRax
+
 
 ## TODOs  
-- add the scripts for a tree cleaning for GeneRax   
+- add the scripts for a tree cleaning for GeneRax  
+- check the alignments that have failed    
 
 
 ```bash
-sbatch --time=06:00:00 submit.sh 
+sbatch --mem=10G --time=06:00:00 submit.sh 
 ```
 
 Example
